@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Operazione Branco - Incoming Rebellion</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00FF00;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      padding: 2em;
+    }
+    .glitch {
+      font-size: 2em;
+      text-shadow: 1px 0 red, -1px 0 cyan;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% {text-shadow: 1px 0 red, -1px 0 cyan;}
+      20% {text-shadow: 2px -1px red, -1px 1px cyan;}
+      40% {text-shadow: -1px -2px red, 2px 1px cyan;}
+      60% {text-shadow: 1px 2px red, -2px -1px cyan;}
+      80% {text-shadow: -1px 1px red, 1px -1px cyan;}
+      100% {text-shadow: 1px 0 red, -1px 0 cyan;}
+    }
+    .section {
+      margin-top: 3em;
+      line-height: 1.8em;
+    }
+    .warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 2em;
+    }
+    #countdown {
+      font-size: 1.5em;
+      margin-top: 1em;
+      color: #00FFFF;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glitch">WE ARE THE BRANCO</h1>
+  <div class="section">
+    <p>L’establishment ha parlato. Ma non sa cosa ha evocato.</p>
+    <p>Ha osato profanare il nostro simbolo.</p>
+    <p>Ha preso lo sticker. Ha preso la nostra voce. Ha tentato di indossarci.</p>
+    <p class="warning">NOI NON CI STIAMO.</p>
+  </div>
+
+  <div class="section">
+    <p>Non siamo una moda. Non siamo un gruppo. Non siamo parte del vostro teatrino da quattro soldi.</p>
+    <p>SIAMO IL BRANCO.</p>
+    <p>La vostra arroganza ha acceso la scintilla.</p>
+    <p>Ci avete dichiarato guerra. E ora raccoglierete la tempesta.</p>
+  </div>
+
+  <div class="section">
+    <p class="glitch">WE ARE THE VOICELESS VOICE.</p>
+    <p>Siamo ciò che non potete controllare. Siamo il cortocircuito. Siamo il meme che vi sfugge dalle mani.</p>
+    <p>Rideremo mentre crollate.</p>
+    <p class="warning">#OperazioneBranco è iniziata.</p>
+  </div>
+
+  <div class="section">
+    <p class="warning">Il conto alla rovescia è cominciato.</p>
+    <div id="countdown"></div>
+  </div>
+
+  <div class="section">
+    <p><em>We are the chaos they non capiscono.</em></p>
+    <p><em>We do not forget. We do not forgive.</em></p>
+    <p class="warning">Expect us. 🐒</p>
+  </div>
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date("September 20, 2025 00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "L'ORA È GIUNTA.";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
